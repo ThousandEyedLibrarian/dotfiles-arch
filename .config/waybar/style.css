@@ -1,0 +1,128 @@
+/* Gruvbox Retro Color Definitions */
+@define-color gruvbox_fg #fbf1c7;
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "Hack Nerd Font", "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);  /* Full transparency like SketchyBar */
+    color: @gruvbox_fg;
+}
+
+tooltip {
+    background: transparent;
+    border-radius: 7px;
+    border-width: 0px;
+    border-color: @gruvbox-fg;
+}
+
+#workspaces {
+    background: transparent;
+    border-radius: 8px;
+    padding: 2px;
+    margin: 2px 0px;
+}
+
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 4px 6px;
+    border-radius: 5px;
+    margin: 0px 1px;
+    background-color: transparent;
+    color: @gruvbox_fg;
+    animation: ws_normal 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.active {
+    padding: 4px 10px;
+    background: alpha(@gruvbox_fg, 0.2);
+    color: @gruvbox_bg;
+    animation: ws_active 20s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+    background: alpha(@gruvbox_fg, 0.2);
+    color: @gruvbox_bg;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.urgent {
+    background-color: @gruvbox_fg;
+    color: transparent;
+    animation: blink 1s ease infinite alternate;
+}
+
+#clock,
+#tray,
+#custom-librarian {
+    color: @gruvbox_fg;
+    background: transparent;
+    margin: 2px 0px;
+    padding: 0px 6px;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 10px;
+}
+
+#custom-librarian {
+    font-size: 10px;
+    font-weight: bold;
+    color: @gruvbox_fg;
+    background: transparent;
+}
+
+#clock {
+    color: @gruvbox_yellow;
+    margin-right: 9px;
+}
+
+
+#tray {
+    padding: 0px 4px;
+}
+
+#tray menu {
+    background: @gruvbox_fg;
+    color: transparent;
+    border-radius: 7px;
+}
+
+#tray menu * {
+    min-height: 16px;
+}
+
+#tray menu separator {
+    min-height: 10px;
+}
+
+/* Animation keyframes */
+@keyframes blink {
+    to { 
+        opacity: 0.7; 
+    }
+}
+
+@keyframes ws_normal {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+@keyframes ws_active {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+@keyframes ws_hover {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}

@@ -1,0 +1,11 @@
+/* Minimal Single Color Theme */
+@define-color bar-bg rgba(0, 0, 0, 0);
+
+@define-color main-bg transparent;
+@define-color main-fg #fbf1c7;
+
+@define-color wb-act-bg #fbf1c7;
+@define-color wb-act-fg transparent;
+
+@define-color wb-hvr-bg rgba(251, 241, 199, 0.2);
+@define-color wb-hvr-fg #fbf1c7;

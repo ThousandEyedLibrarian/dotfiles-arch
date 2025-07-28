@@ -1,0 +1,128 @@
+/* Gruvbox Retro Theme Variables */
+:root {
+    /* Dark theme backgrounds - matching swaylock colors */
+    --gb-bg-primary: #282828;
+    --gb-bg-secondary: #3c3836;  /* swaylock --color and --inside-color */
+    --gb-bg-elevated: #504945;
+    --gb-bg-subtle: #665c54;
+    
+    /* Light theme foregrounds - matching swaylock text */
+    --gb-fg-primary: #fbf1c7;   /* swaylock --ring-color and --text-color */
+    --gb-fg-secondary: #ebdbb2;
+    --gb-fg-muted: #d5c4a1;
+    
+    /* Non-green accent palette - matching swaylock highlights */
+    --gb-red: #cc241d;          /* swaylock --bs-hl-color and --ring-wrong-color */
+    --gb-red-bright: #fb4934;
+    --gb-orange: #d65d0e;
+    --gb-orange-bright: #fe8019;
+    --gb-orange-dark: #af3a03;  /* swaylock --ring-caps-lock-color */
+    --gb-yellow: #d79921;       /* swaylock --key-hl-color and --ring-clear/ver-color */
+    --gb-yellow-bright: #fabd2f;
+    --gb-blue: #458588;
+    --gb-blue-bright: #83a598;
+    --gb-purple: #b16286;
+    --gb-purple-bright: #d3869b;
+    --gb-gray: #928374;
+}
+
+* {
+    background-image: none;
+    font-size: ${fntSize}px;
+    box-shadow: none;
+}
+
+@import "$HOME/.config/waybar/theme.css";
+
+window {
+    background-color: var(--gb-bg-primary);
+}
+
+button {
+    color: var(--gb-fg-primary);
+    background-color: var(--gb-bg-secondary);
+    outline-style: none;
+    border: 1px solid var(--gb-bg-elevated);
+    border-width: 1px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+button:focus {
+    background-color: var(--gb-bg-elevated);
+    background-size: 30%;
+    border-color: var(--gb-yellow-bright);
+    box-shadow: 0 0 8px rgba(250, 189, 47, 0.4);
+}
+
+button:hover {
+    background-color: var(--gb-bg-elevated);
+    background-size: 40%;
+    border-radius: ${active_rad}px;
+}
+
+/* Individual button styling with semantic colors - 6 column layout */
+#lock {
+    background-image: image(url("$HOME/.config/wlogout/icons/lock_white.png"), url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#lock:hover {
+    border-radius: ${active_rad}px;
+    margin: ${mgn}px 0px ${mgn}px ${mgn}px;
+}
+
+#logout {
+    background-image: image(url("$HOME/.config/wlogout/icons/logout_white.png"), url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#logout:hover {
+    border-radius: ${active_rad}px;
+    margin: ${mgn}px 0px ${mgn}px 0px;
+}
+
+#suspend {
+    background-image: image(url("$HOME/.config/wlogout/icons/suspend_white.png"), url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#suspend:hover {
+    border-radius: ${active_rad}px;
+    margin: ${mgn}px 0px ${mgn}px 0px;
+}
+
+#shutdown {
+    background-image: image(url("$HOME/.config/wlogout/icons/shutdown_white.png"), url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#shutdown:hover {
+    border-radius: ${active_rad}px;
+    margin: ${mgn}px 0px ${mgn}px 0px;
+}
+
+#hibernate {
+    background-image: image(url("$HOME/.config/wlogout/icons/hibernate_white.png"), url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+}
+
+#hibernate:hover {
+    border-radius: ${active_rad}px;
+    margin: ${mgn}px 0px ${mgn}px 0px;
+}
+
+#reboot {
+    background-image: image(url("$HOME/.config/wlogout/icons/reboot_white.png"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}
+
+#reboot:hover {
+    border-radius: ${active_rad}px;
+    margin: ${mgn}px ${mgn}px ${mgn}px 0px;
+}
+
+/* Focus states for accessibility */
+button:focus-visible {
+    outline: 2px solid var(--gb-yellow-bright);
+    outline-offset: 2px;
+}
