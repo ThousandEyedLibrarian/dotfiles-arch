@@ -1,0 +1,62 @@
+[user]
+	email = carter@librarian.wiki
+	name = Librarian
+	useConfigOnly = true
+	signingkey = ~/.ssh/id_ed25519.pub
+
+[gpg]
+	format = ssh
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+[init]
+	defaultBranch = master
+
+[core]
+	editor = nvim +16 -c 'startinsert'
+	excludesfile = ~/.gitignore_global
+	compression = 9
+	filemode = false
+
+[rebase]
+	autosquash = true
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[pull]
+	rebase = true
+
+[fetch]
+	prune = true
+
+[safe]
+	directory = *
+
+[push]
+	autoSetupRemote = true
+
+[commit]
+	gpgsign = true
+	template = ~/.commit-conventions.txt
+
+[status]
+	short = true
+	showUntrackedFiles = no
+
+[help]
+	autoCorrect = prompt
+
+[branch]
+	sort = -committerdate
+
+[color]
+	ui = auto
+
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
