@@ -1,8 +1,23 @@
 # Omarchy default configuration
+# If not running interactively, don't do anything (leave this at the top of this file)
+[[ $- != *i* ]] && return
+
+# All the default Omarchy aliases and functions
+# (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
 
-# --- Personal Customizations ---
+# Add your own exports, aliases, and functions here.
+#
+# Make an alias for invoking commands you use constantly
+# alias p='python'
 
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/carter/.lmstudio/bin"
+# End of LM Studio CLI section
+# Local binaries
+export PATH="$HOME/.local/bin:$PATH"
+
+# --- Personal Customizations ---
 # Editor
 alias nv="nvim"
 
@@ -22,10 +37,10 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # Clipboard (xclip)
-alias c="xclip"
-alias v="xclip -o"
-alias cs="xclip -selection clipboard"
-alias vs="xclip -selection clipboard -o"
+alias xc="xclip"
+alias xv="xclip -o"
+alias xcs="xclip -selection clipboard"
+alias xvs="xclip -selection clipboard -o"
 
 # Utilities
 alias mkdir='mkdir -p'
@@ -34,9 +49,6 @@ alias sync-brain="cd ~/Sync/SecondBrain ; git pull ; git add . ; git commit -am 
 
 # Dotfiles bare repo
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles-arch/ --work-tree=$HOME'
-
-# Environment variables
-export PATH="$PATH:$HOME/.local/bin"
 
 # Rust/Cargo
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
