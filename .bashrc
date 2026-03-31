@@ -48,6 +48,11 @@ alias mkdir='mkdir -p'
 alias x='exit'
 alias sync-brain="cd ~/Sync/SecondBrain ; git pull ; git add . ; git commit -am 'Automated update.' ; git push ; cd -"
 
+# Thumbnail generator
+gen-thumbnail() {
+    (cd /home/carter/Sync/personalCode/gen-thumbnail && .venv/bin/python3 gen_thumbnail.py "$@")
+}
+
 # Dotfiles bare repo
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles-arch/ --work-tree=$HOME'
 
