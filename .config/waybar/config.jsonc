@@ -13,6 +13,7 @@
     "group/tray-expander",
     "bluetooth",
     "network",
+    "custom/vpn",
     "pulseaudio",
     "cpu",
     "battery"
@@ -123,6 +124,12 @@
       "warning": 20,
       "critical": 10
     }
+  },
+  "custom/vpn": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/vpn.sh",
+    "interval": 10
   },
   "bluetooth": {
     "format": "",

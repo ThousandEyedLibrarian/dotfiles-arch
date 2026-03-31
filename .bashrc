@@ -20,6 +20,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # --- Personal Customizations ---
 # Editor
 alias nv="nvim"
+alias tutor='claude --agent tutor --disallowedTools "Write,Edit,MultiEdit,NotebookEdit" --permission-mode plan'
 
 # eza aliases (supplements omarchy defaults)
 alias lt='eza --icons --tree --level=2'

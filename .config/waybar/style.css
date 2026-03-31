@@ -68,6 +68,19 @@
   margin-right: 16px;
 }
 
+#custom-vpn {
+  margin: 0 8px;
+  font-size: 11px;
+}
+
+#custom-vpn.connected {
+  color: #a3be8c;
+}
+
+#custom-vpn.disconnected {
+  opacity: 0.4;
+}
+
 #bluetooth {
   margin-right: 17px;
 }
